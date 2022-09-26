@@ -8,9 +8,9 @@ class CustomAuthentication extends Controller
 {
     //
     public function login(){
-        return "Login";
+        return view('auth.login');
     }
     public function registration(){
-        return "Registration";
+        return view('auth.registration');
     }
 }
