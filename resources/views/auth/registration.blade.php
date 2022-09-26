@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <button class="btn btn-primary btn-block mt-2" type="submit">Sign up</button>
                 </div>
-                <p class="mt-1">Already have an account? <a href="login">Login</a></p>
+                <p class="mt-1">Already have an account? <a href="login">Login here</a></p>
             </form>
         </div>
     </div>
