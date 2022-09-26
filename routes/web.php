@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomAuthentication;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login',[CustomAuthentication::class,'login']);
+Route::post('/login',[CustomAuthentication::class,'login']);
+Route::get('/register',[CustomAuthentication::class,'registration']);
+Route::post('/register',[CustomAuthentication::class,'registration']);
