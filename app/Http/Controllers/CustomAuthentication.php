@@ -56,4 +56,11 @@ class CustomAuthentication extends Controller
             return back()->with('fail','This email is not registered');
         }
     }
+
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull('loginId');
+            return redirect('login');
+        }
+    }
 }
