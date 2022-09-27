@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Session;
 
 class CustomAuthentication extends Controller
 {
@@ -34,5 +35,25 @@ class CustomAuthentication extends Controller
             return back()->with('fail','Ooops!! Something went wrong');
         }
 
+    }
+
+    public function signIn(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|min:8|max:16'
+        ]);
+
+        $user = User::where('email',$request->email)->first();
+        if($user){
+            if(Hash::check($request->password,$user->password)){
+                $request->session()->put('loginId',$user->id);
+                return redirect('/');
+            }else{
+                return back()->with('fail','Password does not match');
+            }
+        }
+        else{
+            return back()->with('fail','This email is not registered');
+        }
     }
 }
