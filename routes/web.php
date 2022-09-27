@@ -21,3 +21,4 @@ Route::get('/login',[CustomAuthentication::class,'login']);
 Route::post('/sign-in',[CustomAuthentication::class,'signIn'])->name('sign-in');
 Route::get('/register',[CustomAuthentication::class,'registration']);
 Route::post('/sign-up',[CustomAuthentication::class,'signUp'])->name('sign-up');
+Route::get('/logout',[CustomAuthentication::class,'logout']);
