@@ -20,4 +20,4 @@ Route::get('/', function () {
 Route::get('/login',[CustomAuthentication::class,'login']);
 Route::post('/login',[CustomAuthentication::class,'login']);
 Route::get('/register',[CustomAuthentication::class,'registration']);
-Route::post('/register',[CustomAuthentication::class,'registration']);
+Route::post('/sign-up',[CustomAuthentication::class,'signUp'])->name('sign-up');
