@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductModel;
+use App\Models\Cart;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,11 @@ class ProductController extends Controller
     }
     function addToCart(Request $request){
         if($request->session()->has('loginId')){
-            return "Hello";
+            $cart = new Cart();
+            $cart -> user_id = $request->session()->get('loginId');
+            $cart -> product_id = $request-> product_id;
+            $cart->save();
+            return redirect('/');
         }else{
             return redirect('/login ');
         }
