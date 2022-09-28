@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProductModel;
 use App\Models\Cart;
+use Session;
 
 class ProductController extends Controller
 {
@@ -28,5 +29,9 @@ class ProductController extends Controller
             return redirect('/login ');
         }
  
+    }
+    static function cartItem(){
+        $userId = Session::get('loginId');
+        return Cart::where('user_id',$userId)->count();
     }
 }
