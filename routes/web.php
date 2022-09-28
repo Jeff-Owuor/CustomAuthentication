@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthentication;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use App\Http\Controllers\CustomAuthentication;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ProductController::class,'index']);
+Route::get('detail/{id}',[ProductController::class,'detail']);
+Route::post('add_to_cart',[ProductController::class,'addToCart']);
 Route::get('/login',[CustomAuthentication::class,'login'])->middleware('alreadyLoggedIn');
 Route::post('/sign-in',[CustomAuthentication::class,'signIn'])->name('sign-in');
 Route::get('/register',[CustomAuthentication::class,'registration'])->middleware('alreadyLoggedIn');
