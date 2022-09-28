@@ -1,3 +1,8 @@
+<?php
+    use App\Http\Controllers\ProductController;
+    $total = ProductController::cartItem();
+?>
+
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -17,6 +22,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="logout">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="">Cart({{$total}})</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
