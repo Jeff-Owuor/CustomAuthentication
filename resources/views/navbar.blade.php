@@ -14,17 +14,20 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
+        @if(Session::has('loginId'))
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="logout">Logout</a>
+          </li>
+        @else
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="register">Register</a>
+          </li>
+        @endif
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="register">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="logout">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="">Cart({{$total}})</a>
+          <a class="nav-link" aria-current="page" href="/productList">Cart({{$total}})</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
