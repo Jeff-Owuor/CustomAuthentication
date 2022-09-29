@@ -23,3 +23,4 @@ Route::post('/sign-in',[CustomAuthentication::class,'signIn'])->name('sign-in');
 Route::get('/register',[CustomAuthentication::class,'registration'])->middleware('alreadyLoggedIn');
 Route::post('/sign-up',[CustomAuthentication::class,'signUp'])->name('sign-up');
 Route::get('/logout',[CustomAuthentication::class,'logout']);
+Route::get('/productList',[ProductController::class,'productList']);
