@@ -17,6 +17,7 @@
                       <h2>{{$item->productName}}</h2>
                       <h5>{{$item->description}}</h5>
                     </div>
+                    <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning">Delete</a>
              </div>
              
             </div>
