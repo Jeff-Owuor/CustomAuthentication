@@ -18,6 +18,12 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="logout">Logout</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/myorders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/productList">Cart({{$total}})</a>
+        </li>
         @else
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="login">Login</a>
@@ -26,12 +32,10 @@
             <a class="nav-link" aria-current="page" href="register">Register</a>
           </li>
         @endif
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/productList">Cart({{$total}})</a>
-        </li>
+        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="search"  type="get" action="{{ url('/search')}}">
+        <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search" name="query">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
