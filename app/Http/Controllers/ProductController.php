@@ -77,4 +77,17 @@ class ProductController extends Controller
        $req->input();
        return redirect('/');
     } 
+    function myOrders(){
+        $userId = Session::get('loginId');
+        $orders =  $products = DB::table('orders')
+        ->join('product_models','orders.product_id','=','product_models.id')
+        ->where('orders.user_id',$userId)
+        ->get();
+        return view('myorder',['orders'=>$orders]);
+    }
+    function search(){
+        $search_text = $_GET['query'];
+        $products = ProductModel::where('productName','LIKE','%'.$search_text.'%')->get();
+        return view('search',compact('products'));
+    }
 }
