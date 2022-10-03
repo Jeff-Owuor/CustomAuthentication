@@ -18,11 +18,11 @@ class Products extends Seeder
         //
 
         DB::table('product_models')->insert([
-            'productName'=>'tecno',
-            'price'=>'50000',
+            'productName'=>'xbox series x',
+            'price'=>'60000',
             'category'=>'electronics',
-            'description'=>'rare camera like no other',
-            'gallery'=>'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.wKH_I-KbeJ1BQYMTi0KwVgHaHa%26pid%3DApi&f=1&ipt=af838d751218b40c339e44ebc46d1dec13c2d72f7844eb2b8edfdb16f07e0304&ipo=images',
+            'description'=>'Next-gen console',
+            'gallery'=>'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.OsXNuPjEt02CPetI5foH_gHaD2%26pid%3DApi&f=1&ipt=d982578d2b97f72a678aee4052b9b722511956ec0daa1a4afc2268da4f4f1c0e&ipo=images',
 
         ]); 
     }

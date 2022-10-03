@@ -32,10 +32,10 @@
 
   </div>
 
-  <div class="mb-3" >
-      <h3>Trending Products</h3>
+  <div class="mb-3 mt-2 d-flex" >
+      <h3 class="text-center">Trending Products</h3>
       @foreach($products as $product)
-      <div class="card" style="width: 22rem;">
+      <div class="card" style="width: 22rem;margin-left:2px">
           <img src="{{$product->gallery}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{$product->productName}}</h5>
