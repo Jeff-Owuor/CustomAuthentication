@@ -1,8 +1,8 @@
 @extends('base')
 
 @section('content')
-
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+<div class="container">
+<div id="carouselExampleCaptions" class="carousel slide mt-4" data-bs-ride="false">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -29,17 +29,21 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-  <div class="trending-wrapper" >
+
+  </div>
+
+  <div class="mb-3" >
       <h3>Trending Products</h3>
       @foreach($products as $product)
-         <div style="float:left">
-            <img src="{{$product->gallery}}" alt="" srcset="" style="height:150px;">
-            <div>
-                <h3></h3>
-            </div>
-         </div>
+      <div class="card" style="width: 22rem;">
+          <img src="{{$product->gallery}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{$product->productName}}</h5>
+            <p class="card-text">Kes {{$product->price}}</p>
+          </div>
+      </div>
       @endforeach
   </div>
-</div>
+  </div>
 @endsection
 
